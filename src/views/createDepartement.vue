@@ -13,7 +13,7 @@
         <label for="adress">adress</label>
         <input type="text" name="adress" id="adress" v-model="adress">
     </p>
-    <p v-if="listItems">Hello</p>
+    <button id="btnSubmit" class="btn btn-primary" style="align:center" v-on:click="test()">Open</button>
     <div v-for="item in listItems">
         items:   {{ item }}
     </div>
@@ -28,11 +28,12 @@ export default {
     methods: {
       async getData() {
         // C EST LES CORS POLICY A REGARDER COMMENT LES DEGAGER
-        const res = await fetch("http://localhost/SQL_FINAL_BACK/test.php");
+        const res = await fetch("http://localhost/SQL_FINAL_BACK/test.php", {
+        
+        });
         const finalRes = await res.json();
-        console.log("finalRes")
         this.listItems = finalRes;
-      }
+      },
     },
     async mounted() {
       await this.getData()
