@@ -1,18 +1,19 @@
 import { createWebHistory, createRouter } from "vue-router"
+import Header from "@/components/header.vue"
 import Home from "@/views/home.vue"
-import Headers from "@/components/header.vue"
 
 const routes = [
+  {
+    path : "/header",
+    name : "Header",
+    component : Header,
+  },
   {
     path: "/",
     name: "Home",
     component: Home,
   },
-  {
-    path : "/header",
-    name : "Header",
-    component : Headers,
-  },
+  
 ]
 const router = createRouter({
   history: createWebHistory(),
