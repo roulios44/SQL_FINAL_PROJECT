@@ -1,7 +1,7 @@
 <template>
     <form id="app" @submit="checkForm" action="/something" method="post">
-  
   <p>
+    <h1>Hello</h1>
     <label for="name">Name</label>
     <input type="text" name="name" id="name" v-model="name">
   </p>
@@ -28,3 +28,8 @@
 </template>
 <script>
 </script>
+<style>
+h1{
+  color: red;
+}
+</style>
