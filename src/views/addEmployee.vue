@@ -1,12 +1,12 @@
 <template>
 
-    <form action="" method="get" class="form-example">
-        <div class="form-example">
-            <div class="form-example">
+    <form action="" method="get" class="formAddEmployees">
+        <div class="addEmployees">
+            <div class="name">
                 <label for="name">Enter your name: </label>
                 <input type="text" name="name" id="name" required>
             </div>
-            <div class="form-example">
+            <div class="surname">
                 <label for="surname">Enter your name: </label>
                 <input type="text" name="name" id="name" required>
             </div>
@@ -35,11 +35,11 @@
                 <input type="text" name="birthPlace" id="birthPlace" required>
             </div>
 
-            <div class="form-example">
+            <div class="department">
                 <label for="department">Enter your department : </label>
                 <input type="text" name="name" id="name" required>
             </div>
-            <div class="form-example">
+            <div class="position">
                 <label for="position">Enter your position: </label>
                 <input type="text" name="name" id="name" required>
             </div>
@@ -60,7 +60,7 @@
                 <input type="bool" name="socialSecurity" id="socialSecurity" required>
             </div>
 
-            <div class="form-example">
+            <div class="addEmployee">
                 <input type="submit" value="Add Employee">
             </div>
         </div>  
