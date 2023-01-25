@@ -1,29 +1,26 @@
 <template>
-    {{
-        allDepartements
-     }}
+  <div>
+    <select v-model="selectedName" @change="updateId">
+      <option v-for="item in items" :value="item.name">{{ item.name }}</option>
+    </select>
+    <p>Selected ID: {{ selectedId }}</p>
+  </div>
 </template>
 
-
 <script>
-
-
 export default {
-    data() {
-      return {
-        allDepartements: [],
-      }
-    },
-    methods: {
-      async createDepartement(){
-        const res = await fetch("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
-        this.allDepartements = await res.json()
-        }
-    },
-    async mounted() {
-        this.createDepartement()
+  data() {
+    return {
+      items: [{ name: 'item1', id: 1 }, { name: 'item2', id: 2 }],
+      selectedName: '',
+      selectedId: ''
     }
+  },
+  methods: {
+    updateId() {
+      let selectedItem = this.items.find(item => item.name === this.selectedName);
+      this.selectedId = selectedItem.id;
+    }
+  }
 }
 </script>
-<style>
-</style>
