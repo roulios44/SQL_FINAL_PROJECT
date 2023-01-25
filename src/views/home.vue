@@ -1,4 +1,12 @@
 <template>
+  <nav>
+    <button @click="toggleMenu" class="burger-button">☰</button>
+    <div class="nav-links" :class="{ 'nav-open': menuOpen }">
+      <router-link to="/" class="nav-link">Home</router-link>
+      <router-link to="/about" class="nav-link">About</router-link>
+      <router-link to="/contact" class="nav-link">Contact</router-link>
+    </div>
+  </nav>
     <form id="app" @submit="checkForm" action="/something" method="post">
   
   <p>
@@ -27,4 +35,37 @@
 </form>
 </template>
 <script>
+  export default {
+      name : "NavBar",
+      data() {
+          return {
+              menuOpen : false,
+          };
+      },
+      methods: {
+          toggleMenu(){
+              this.menuOpen = !this.menuOpen;
+          }
+      }
+  };
 </script>
+<style>
+.body {
+    padding : 0;
+    margin : 0;
+}
+.burger-button {
+display: block;
+padding: 5px;
+font-size: 1.5em;
+cursor: pointer;
+}
+.nav-links {
+display: none;
+}
+
+.nav-open {
+display: block;
+}
+
+</style>
