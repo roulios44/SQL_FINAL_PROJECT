@@ -32,15 +32,15 @@ export default {
     async createDepartement(){
       if(!this.name ||!this.location || !this.adress){
         this.alertMessage = "Please enter informations into all texts fields"
-      }else{
+      } else {
         this.alertMessage = ""
-        const post = await axios.post("http://172.19.97.30/SQL_FINAL_BACK/addDepartement.php",
-        JSON.stringify({
-            "name": this.name,
-            "adress": this.adress,
-            "location": this.location
-          }))
-        const res = await post.data()
+        const post = await axios.post("http://localhost/SQL_FINAL_BACK/addDepartement.php",
+          JSON.stringify({
+              "name": this.name,
+              "adress": this.adress,
+              "location": this.location
+            }))
+        const res = await post.data
         console.log(res)
       }
       }
