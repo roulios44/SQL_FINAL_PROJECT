@@ -21,7 +21,14 @@ const routes = [
     name: "Home",
     component: Home,
   },
+
   {
+    path: "/createDepartement",
+    name: "createDepartement",
+    component: createDepartement,
+  },
+  {
+<<<<<<< HEAD
     path: "/createDepartement",
     name: "createDepartement",
     component: createDepartement,
@@ -30,6 +37,13 @@ const routes = [
     name:"getAllDepartement",
     component:getAllDepartement,
   }
+=======
+    path : "/header",
+    name : "Header",
+    component : Headers,
+  },
+
+>>>>>>> 3668a04cc916eae0cae3593021f6888c0a4b34d6
 ]
 const router = createRouter({
   history: createWebHistory(),

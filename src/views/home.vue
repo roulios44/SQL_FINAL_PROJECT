@@ -7,12 +7,18 @@
       <router-link to="/contact" class="nav-link">Contact</router-link>
     </div>
   </nav>
-    <form id="app" @submit="checkForm" action="/something" method="post">
+  <form id="app" @submit="checkForm" action="/something" method="post">
   
-  <p>
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" v-model="name">
-  </p>
+    <p>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" v-model="name">
+    </p>
+    <form id="app" @submit="checkForm" action="/something" method="post">
+    <p>
+      <h1>Hello</h1>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" v-model="name">
+    </p>
 
 <p>
   <label for="age">Age</label>
@@ -32,7 +38,7 @@
   <input type="submit" value="Submit">  
 </p>
 
-</form>
+  </form>
 </template>
 <script>
   export default {
