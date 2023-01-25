@@ -3,6 +3,7 @@ import Header from "@/views/header.vue"
 import Home from "@/views/home.vue"
 import createDepartement from "@/views/createDepartement.vue"
 import addEmployee from "@/views/addEmployee.vue"
+import getAllDepartement from "@/views/getAllDepartement"
 
 const routes = [
   {
@@ -24,6 +25,10 @@ const routes = [
     path: "/createDepartement",
     name: "createDepartement",
     component: createDepartement,
+  },{
+    path:"/getAllDepartement",
+    name:"getAllDepartement",
+    component:getAllDepartement,
   }
 ]
 const router = createRouter({
