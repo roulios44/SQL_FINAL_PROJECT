@@ -95,7 +95,7 @@ export default{
           this.alertMessage = "Please enter informations into all texts fields"
         }else{
           this.alertMessage = ""
-          const post = await fetch("http://localhost/SQL_FINAL_BACK/addDepartement.php",{
+          const post = await fetch("http://localhost/SQL_FINAL_BACK/addEmployee.php",{
             method:"POST",
             headers:{
               'Content-Type': 'application/json'
