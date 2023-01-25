@@ -36,8 +36,12 @@
             </div>
 
             <div class="department">
-                <label for="department">Enter your working department :</label>
-                <input type="text" name="name" id="name" required v-model="department">
+                <select name="departement" v-model="department">
+                    <option v-for="item,id in allDepartements" >
+                        {{ item.id }} {{ item.name }}
+                    </option>
+                </select>
+                {{ department[0] }}
             </div>
             <div class="position">
                 <label for="position">Enter your working position :</label>
@@ -85,45 +89,49 @@ export default{
             firstDay:"",
             seniority:"",
             insurance:"",
-            socialSecurity:""
+            socialSecurity:"",
+            allDepartements: [],
         }
     },
     methods: {
-        methods: {
-      async addEmployee(){
-        if(!this.name ||!this.surname || !this.gender || !this.age || !this.address || !this.phoneNumber || !this.birthDate || !this.birthPlace || !this.department || !this.position || !this.firstDay || !this.seniority || !this.insurance || !this.socialSecurity){
-          this.alertMessage = "Please enter informations into all texts fields"
-        }else{
-          this.alertMessage = ""
-          const post = await fetch("http://localhost/SQL_FINAL_BACK/addDepartement.php",{
-            method:"POST",
-            headers:{
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "name": this.name,
-                "surname": this.surname,
-                "gender": this.gender,
-                "age": this.age,
-                "address": this.address,
-                "phoneNumber": this.phoneNumber,
-                "birthDate": this.birthDate,
-                "birthPlace": this.birthPlace,
-                "department": this.department,
-                "position": this.position,
-                "firstDay": this.firstDay,
-                "seniority": this.seniority,
-                "insurance": this.insurance,
-                "socialSecurity": this.socialSecurity
+        async addEmployee(){
+            if(!this.name ||!this.surname || !this.gender || !this.age || !this.address || !this.phoneNumber || !this.birthDate || !this.birthPlace || !this.department || !this.position || !this.firstDay || !this.seniority || !this.insurance || !this.socialSecurity){
+            this.alertMessage = "Please enter informations into all texts fields"
+            }else{
+            this.alertMessage = ""
+            const post = await fetch("http://localhost/SQL_FINAL_BACK/addDepartement.php",{
+                method:"POST",
+                headers:{
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "name": this.name,
+                    "surname": this.surname,
+                    "gender": this.gender,
+                    "age": this.age,
+                    "address": this.address,
+                    "phoneNumber": this.phoneNumber,
+                    "birthDate": this.birthDate,
+                    "birthPlace": this.birthPlace,
+                    "department": this.department,
+                    "position": this.position,
+                    "firstDay": this.firstDay,
+                    "seniority": this.seniority,
+                    "insurance": this.insurance,
+                    "socialSecurity": this.socialSecurity
+                })
             })
-          })
+            }
+            },
+            async getAllDepartement(){
+            const res = await fetch("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
+            console.log("hi")
+            this.allDepartements = await res.json()
+            },
+        },
+        async mounted(){
+            await this.getAllDepartement()
         }
-        }
-    },
-    async mounted() {
-      
-    }
-  }
     }
 </script>
 
