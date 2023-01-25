@@ -4,7 +4,7 @@
         <div class="addEmployees">
             <div class="name">
                 <label for="name">Enter your name: </label>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name" required v-model="name">
             </div>
             <div class="surname">
                 <label for="surname">Enter your name: </label>
