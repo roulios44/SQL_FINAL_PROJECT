@@ -1,41 +1,41 @@
 <template>
     <div class="addEmployees">
         <div class="name">
-            <label for="name">Enter your name :</label>
+            <label for="name">Enter your name : </label>
             <input type="text" name="name" id="name" required v-model="name">
         </div>
         <div class="surname">
-            <label for="surname">Enter your surname :</label>
+            <label for="surname">Enter your surname : </label>
             <input type="text" name="surname" id="surname" required v-model="surname">
         </div>
         <div class="gender">
-            <label for="gender">Enter your gender :</label>
+            <label for="gender">Enter your gender : </label>
             <input type="text" name="gender" id="gender" required v-model="gender">
         </div>
         <div class="age">
-            <label for="age">Enter your age :</label>
+            <label for="age">Enter your age : </label>
             <input type="text" name="age" id="age" required v-model="age">
         </div>
         <div class="address">
-            <label for="address">Enter your address :</label>
+            <label for="address">Enter your address : </label>
             <input type="text" name="address" id="address" required v-model="address">
         </div>
         <div class="phoneNumber">
-            <label for="phone">Enter your phone number :</label>
+            <label for="phone">Enter your phone number : </label>
             <input type="text" name="phone" id="phone" required v-model="phoneNumber">
         </div>
         <div class="email">
-            <label for="email">Enter your email :</label>
+            <label for="email">Enter your email : </label>
             <input type="email" name="email" id="email" required v-model="email">
         </div>
         {{ email }}
         <div class="birthDate">
-            <label for="birthDate">Enter your birth date :</label>
+            <label for="birthDate">Enter your birth date : </label>
             <input type="date" name="birthDate" id="birthDate" required v-model="birthDate">
             {{ birthDate }}
         </div>
         <div class="birthPlace">
-            <label for="birthPlace">Enter your birth place :</label>
+            <label for="birthPlace">Enter your birth place : </label>
             <input type="text" name="birthPlace" id="birthPlace" required v-model="birthPlace">
         </div>
 
@@ -48,24 +48,24 @@
             {{ department[0] }}
         </div>
         <div class="position">
-            <label for="position">Enter your working position :</label>
+            <label for="position">Enter your working position : </label>
             <input type="text" name="name" id="name" required v-model="position">
         </div>
         <div class="firstDay">
-            <label for="firstDay">Enter your first day of work in this company :</label>
+            <label for="firstDay">Enter your first day of work in this company : </label>
             <input type="date" name="firstDay" id="firstDay" required v-model="firstDay">
         </div>
         <div class="seniority">
-            <label for="seniority">Enter your seniority in this company :</label>
+            <label for="seniority">Enter your seniority in this company : </label>
             <input type="text" name="seniority" id="seniority" required v-model="seniority">
         </div>
         <div class="insurance">
-            <label for="insurance">Do you benefit of the the company insurance ?</label>
+            <label for="insurance">Do you benefit of the the company insurance ? </label>
             <p><input type="radio" v-model="insurance" v-bind:value="true">Yes</p>
             <p><input type="radio" v-model="insurance" v-bind:value="false">No</p>
         </div>
         <div class="socialSecurity">
-            <label for="socialSecurity">Fill in your social security number :</label>
+            <label for="socialSecurity">Fill in your social security number : </label>
             <input type="text" name="socialSecurity" id="socialSecurity" required v-model="socialSecurity">
             {{ socialSecurity }}
         </div>

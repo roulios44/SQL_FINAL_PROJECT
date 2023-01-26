@@ -1,12 +1,12 @@
 <template>
     <head></head>
-    <h1>Create a new position</h1>
+    <h1>Create a new work position</h1>
     <p>
-        <label for="position">Enter your job title :</label>
+        <label for="position">Enter the job title : </label>
         <input type="text" name="position" id="position" v-model="position">
     </p>
     <div class="department">
-      <p>Select the departement to add a job</p>
+      <p>Select one of the following departements whose belongs to it :</p>
             <select name="departement" v-model="departement">
                 <option v-for="item,id in allDepartements" >
                     {{ item.id }} {{ item.name }}
@@ -15,11 +15,11 @@
             {{ departement[0] }}
         </div>
     <p>
-        <label for="degrees">Fill in its entitled degrees :</label>
+        <label for="degrees">Fill in its entitled degrees : </label>
         <input type="text" name="degrees" id="degrees" v-model="degrees">
     </p>
     <p>   
-      <label for="isDangerous">Is your position dangerous ?</label>
+      <label for="isDangerous">Is this position dangerous ? </label>
       <p><input type="radio" v-model="isDangerous" v-bind:value="true">Yes</p>
       <p><input type="radio" v-model="isDangerous" v-bind:value="false">No</p>
     </p>
