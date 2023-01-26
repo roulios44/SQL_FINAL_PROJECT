@@ -21,6 +21,7 @@ export default {
             search: this.search,
         }))
         const res = await post.data
+        console.log(res)
         this.result = res;
     }
   },
