@@ -1,4 +1,5 @@
 <template>
+    <navBar />
     <div class="addEmployees">
         <div class="name">
             <label for="name">Enter your name :</label>
@@ -79,6 +80,7 @@
 </template>
 
 <script>
+import navBar from '@/components/navBar.vue'
 import axios from 'axios'
 export default{
     data(){
@@ -101,6 +103,9 @@ export default{
             allDepartements: [],
             alertMessage: "",
         }
+    },
+    components:{
+        navBar,
     },
     methods: {
         async addEmployee(){

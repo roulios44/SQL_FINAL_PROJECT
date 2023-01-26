@@ -23,6 +23,7 @@ const routes = [
     name: "Home",
     component: Home,
   },
+
   {
     path: "/createDepartement",
     name: "createDepartement",
@@ -42,11 +43,6 @@ const routes = [
     path: "/searchEmployes",
     name:"searchEmployes",
     component: searchEmployes,
-  },
-  {
-    path:"/createPosition",
-    name:"createPosition",
-    component:createPosition,
   },
 ]
 const router = createRouter({

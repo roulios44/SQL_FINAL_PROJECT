@@ -1,4 +1,5 @@
 <template>
+  <navBar />
   <head></head>
   <h1>Create a departement in our company</h1>
   <p>
@@ -19,6 +20,7 @@
 
 <script>
 import axios from 'axios'
+import navBar from '@/components/navBar.vue'
 export default {
   data() {
     return {
@@ -27,6 +29,9 @@ export default {
       adress:"",
       alertMessage: "",
     }
+  },
+  components: {
+    navBar
   },
   methods: {
     async createDepartement(){
