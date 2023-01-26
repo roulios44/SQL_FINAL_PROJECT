@@ -2,15 +2,15 @@
   <head></head>
   <h1>Create a departement in our company</h1>
   <p>
-      <label for="name">Name</label>
+      <label for="name">Enter the department's name</label>
       <input type="text" name="name" id="name" v-model="name">
   </p>
   <p>
-      <label for="location">location</label>
+      <label for="location">Enter its location :</label>
       <input type="text" name="location" id="location" v-model="location">
   </p>
   <p>
-      <label for="adress">adress</label>
+      <label for="adress">Enter its adress :</label>
       <input type="text" name="adress" id="adress" v-model="adress">
   </p>
   <button id="btnSubmit" class="btn btn-primary" style="align:center" v-on:click="createDepartement()">Create departement</button>
