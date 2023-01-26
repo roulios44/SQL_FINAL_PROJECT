@@ -34,6 +34,11 @@ const routes = [
     component:getAllDepartement,
   },
   {
+    path: "/createPosition",
+    name: "createPosition",
+    component: createPosition,
+  },
+  {
     path: "/searchEmployes",
     name:"searchEmployes",
     component: searchEmployes,
