@@ -1,6 +1,6 @@
 <template>
     <head></head>
-    <h1>Create a position in a department</h1>
+    <h1>Create a new position</h1>
     <p>
         <label for="jobTitle">Enter your job title :</label>
         <input type="text" name="jobTitle" id="jobTitle" v-model="jobTitle">
