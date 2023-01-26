@@ -28,9 +28,11 @@
             <label for="email">Enter your email :</label>
             <input type="email" name="email" id="email" required v-model="email">
         </div>
+        {{ email }}
         <div class="birthDate">
             <label for="birthDate">Enter your birth date :</label>
             <input type="date" name="birthDate" id="birthDate" required v-model="birthDate">
+            {{ birthDate }}
         </div>
         <div class="birthPlace">
             <label for="birthPlace">Enter your birth place :</label>
@@ -85,7 +87,7 @@ export default{
             surname:"",
             gender:"",
             age:"",
-            mail:"",
+            email:"",
             address:"",
             phoneNumber:"",
             birthDate:"",
@@ -111,7 +113,7 @@ export default{
                     "name": this.name,
                     "surname": this.surname,
                     "gender": this.gender,
-                    "mail": this.mail,
+                    "email": this.email,
                     "age": this.age,
                     "address": this.address,
                     "phoneNumber": this.phoneNumber,

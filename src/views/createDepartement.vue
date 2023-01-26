@@ -41,7 +41,6 @@ export default {
               "location": this.location
             }))
         const res = await post.data
-        console.log(res)
       }
       }
   },
