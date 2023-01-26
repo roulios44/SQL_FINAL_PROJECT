@@ -6,7 +6,7 @@
         <input type="text" name="position" id="position" v-model="position">
     </p>
     <div class="department">
-      <p>Select one of the following departements whose belongs to it :</p>
+      <p>Select one of the following departements whose belongs to it : </p>
             <select name="departement" v-model="departement">
                 <option v-for="item,id in allDepartements" >
                     {{ item.id }} {{ item.name }}
