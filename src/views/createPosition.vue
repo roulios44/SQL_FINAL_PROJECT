@@ -6,18 +6,17 @@
         <input type="text" name="jobTitle" id="jobTitle" v-model="jobTitle">
     </p>
     <p>
-        <label for="category">Enter the associated department :</label>
+        <label for="category">Enter its associated department :</label>
         <input type="text" name="category" id="category" v-model="category">
     </p>
     <p>
-        <label for="degrees">Fill in the entitled degrees :</label>
+        <label for="degrees">Fill in its entitled degrees :</label>
         <input type="text" name="degrees" id="degrees" v-model="degrees">
     </p>
-    <p>
-        <label for="isDangerous">Is this position dangerous ?</label>
-        <input type="bool" name="isDangerous" id="isDangerous" v-model="isDangerous">
-        <option value="true">Yes</option>
-        <option value="false">No</option>
+    <p> 
+      <label for="insurance">Is your position dangerous ?</label>
+      <p><input type="radio" v-model="isDangerous" v-bind:value="true">Yes</p>
+      <p><input type="radio" v-model="isDangerous" v-bind:value="false">No</p>
     </p>
     <button id="btnSubmit" class="btn btn-primary" style="align:center" v-on:click="createDepartement()">Create position</button>
     <p>{{ alertMessage }}</p>
@@ -31,7 +30,7 @@
         jobTitle:"",
         category:"",
         degrees:"",
-        isDangerous: "",
+        isDangerous: true,
       }
     },
     methods: {
