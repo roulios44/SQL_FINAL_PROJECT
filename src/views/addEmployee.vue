@@ -131,10 +131,7 @@ export default{
         async getAllDepartement(){
             const res = await axios.get("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
             this.allDepartements = await res.data
-        },changeInsurrance(){
-            if(this.insurance)this.insurance = false
-            else this.insurance = true
-        }
+        },
         },
         async mounted(){
             await this.getAllDepartement()
