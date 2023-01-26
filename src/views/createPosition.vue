@@ -41,7 +41,7 @@ import axios from 'axios'
           this.alertMessage = "Please enter informations into all field texts"
         }else{
           this.alertMessage = ""
-          const post = await axios.post("http://172.19.97.30/SQL_FINAL_PROJECT/addPosition.php",
+          const post = await axios.post("localhost:8080/SQL_FINAL_PROJECT/addPosition.php",
           JSON.stringify({
               "position": this.position,
               "category": this.category,
