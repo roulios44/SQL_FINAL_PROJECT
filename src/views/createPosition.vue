@@ -46,7 +46,7 @@
           this.alertMessage = "Please enter informations into all field texts"
         }else{
           this.alertMessage = ""
-          const post = await axios.post("http://localhost/SQL_FINAL_PROJECT/addPosition.php",
+          const post = await axios.post("http://localhost/SQL_FINAL_BACK/addPosition.php",
           JSON.stringify({
               "position": this.position,
               "departement": this.departement[0],
