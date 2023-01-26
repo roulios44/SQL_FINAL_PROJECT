@@ -43,6 +43,11 @@ const routes = [
     name:"searchEmployes",
     component: searchEmployes,
   },
+  {
+    path:"/createPosition",
+    name:"createPosition",
+    component:createPosition,
+  },
 ]
 const router = createRouter({
   history: createWebHistory(),

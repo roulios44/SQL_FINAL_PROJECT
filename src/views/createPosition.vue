@@ -5,10 +5,15 @@
         <label for="position">Enter your job title :</label>
         <input type="text" name="position" id="position" v-model="position">
     </p>
-    <p>
-        <label for="category">Enter its associated department :</label>
-        <input type="text" name="category" id="category" v-model="category">
-    </p>
+    <div class="department">
+      <p>Select the departement to add a job</p>
+            <select name="departement" v-model="departement">
+                <option v-for="item,id in allDepartements" >
+                    {{ item.id }} {{ item.name }}
+                </option>
+            </select>
+            {{ departement[0] }}
+        </div>
     <p>
         <label for="degrees">Fill in its entitled degrees :</label>
         <input type="text" name="degrees" id="degrees" v-model="degrees">
@@ -23,36 +28,42 @@
   </template>
   
   <script>
-  import { is } from '@babel/types'
-import axios from 'axios'
+  import axios from 'axios'
   export default {
     data() {
       return {
+        departement:"",
         alertMessage:"",
         position:"",
-        category:"",
         degrees:"",
         isDangerous: true,
+        allDepartements: [],
       }
     },
     methods: {
       async createPosition(){
-        if( !this.position ||!this.category || !this.degrees){
+        if( !this.position ||!this.departement || !this.degrees){
           this.alertMessage = "Please enter informations into all field texts"
         }else{
           this.alertMessage = ""
-          const post = await axios.post("localhost:8080/SQL_FINAL_PROJECT/addPosition.php",
+          const post = await axios.post("http://localhost/SQL_FINAL_BACK/addPosition.php",
           JSON.stringify({
               "position": this.position,
-              "category": this.category,
+              "departement": this.departement[0],
               "degrees": this.degrees,
               "isDangerous": this.isDangerous
             }))
-          const res = await post.data()
-          console.log(res)
+          const res = await post.data
         }
-        }
+      },
+      async getAllDepartement(){
+          const res = await axios.get("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
+          this.allDepartements = await res.data
+      },
     },
+    async mounted(){
+      await this.getAllDepartement()
+    }
   }
   </script>
   <style>
