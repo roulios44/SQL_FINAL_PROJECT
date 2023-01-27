@@ -6,6 +6,7 @@ import addEmployee from "@/views/addEmployee.vue"
 import getAllDepartement from "@/views/getAllDepartement"
 import searchEmployes from "@/views/searchEmployes"
 import createPosition from "@/views/createPosition"
+import departements from "@/views/departements"
 
 const routes = [
   {
@@ -44,6 +45,11 @@ const routes = [
     name:"searchEmployes",
     component: searchEmployes,
   },
+  {
+    path: "/departements",
+    name:"departements",
+    component: departements,
+  }
 ]
 const router = createRouter({
   history: createWebHistory(),
