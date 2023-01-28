@@ -142,7 +142,7 @@ export default{
             const res = await axios.get("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
             this.allDepartements = await res.data
         },
-        // find a way to wait the data change 
+        // find a way to await the data changes 
         async getDepartementPostes(){
             console.log(this.department[0])
             const res = await axios.post("http://localhost/SQL_FINAL_BACK/getAllPosts.php",JSON.stringify({
