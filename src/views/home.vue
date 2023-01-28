@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="nav-links" :class="{ 'nav-open': menuOpen }">
-      <span><router-link to="/" class="nav-link"><p>Home</p></router-link></span>
+      <span><router-link to="/" class="nav-link"><p>Home page</p></router-link></span>
       <span><router-link to="/addEmployee" class="nav-link"><p>Add an employee</p></router-link></span>
       <span><router-link to="/createDepartement" class="nav-link"><p>Add a department</p></router-link></span>
       <span><router-link to="/createPosition" class="nav-link"><p>Add a position</p></router-link></span>
@@ -36,13 +36,6 @@
   max-width: 100%;
   margin: 0 auto;
   padding: 10px 0;
-}
-.nav-link {
-  text-decoration: none;
-  color: #03224c;
-  position: relative;
-  transition: .2s all;
-  font-weight: 300;
 }
 span{
   align-items: center;
@@ -124,24 +117,3 @@ a::before, .drop::before {
   transition: .2s all;
   z-index: -1;
 }
-
-a:hover, .drop:hover {
-  color: rgb(26, 85, 195);
-  font-size: 1.6em;
-}
-
-.dropdown-content .drop:hover {
-  font-size: inherit;
-}
-
-.drop {
-  border: none;
-  background-color: transparent;
-  font-family: "permanent-marker";
-  font-size: inherit;
-}
-
-.drop:hover {
-  color: rgb(26, 85, 195);
-  cursor:pointer;
-} -->
