@@ -6,6 +6,8 @@
         <span><router-link to="/createDepartement" class="nav-link"><p>Add a new departement</p></router-link></span>
         <span><router-link to="/createPosition" class="nav-link"><p>Add a new job's</p></router-link></span>
         <span><router-link to="/searchEmployes" class="nav-link"><p>Search a employee</p></router-link></span>
+        <span><router-link to="/departements" class="nav-link"><p>departements</p></router-link></span>
+
       </div>
     </nav>
   </template>

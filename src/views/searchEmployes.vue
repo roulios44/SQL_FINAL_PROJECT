@@ -2,9 +2,11 @@
   <navBar />
     <p>
       <label for="name">Search Employes</label>
-      <input type="text" name="search" id="search" v-model="search" @change="searchEmployee()">
+      <input type="text" name="search" id="search" v-model="search" v-on:input="searchEmployee()">
   </p>
-  {{ result }}
+  <div v-for="employee in result">
+    ID: {{ employee.id }}      Name:{{ employee.name }}
+  </div>
 </template>
 <script>
 import axios from 'axios'
@@ -21,12 +23,15 @@ export default {
   },
   methods: {
     async searchEmployee(){
+      if(this.search){
         const post = await axios.post("http://localhost/SQL_FINAL_BACK/searchEmployes.php",JSON.stringify({
-            search: this.search,
+          search: this.search,
         }))
         const res = await post.data
         console.log(res)
         this.result = res;
+      }else this.result = []
+        
     }
   },
 }
