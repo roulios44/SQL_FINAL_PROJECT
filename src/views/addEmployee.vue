@@ -1,4 +1,5 @@
 <template>
+    <navBar />
     <div class="addEmployees">
         <div class="name">
             <label for="name">Enter your name : </label>
@@ -40,16 +41,20 @@
         </div>
 
         <div class="department">
-            <select name="departement" v-model="department">
+            <p>Select Your departement</p>
+            <select name="departement" v-model="department" v-on:input="getDepartementPostes()">
                 <option v-for="item,id in allDepartements" >
                     {{ item.id }} {{ item.name }}
                 </option>
             </select>
-            {{ department[0] }}
         </div>
-        <div class="position">
-            <label for="position">Enter your working position : </label>
-            <input type="text" name="name" id="name" required v-model="position">
+        <div class="post">
+            <p>Select Your Jobs ( select departement first )</p>
+            <select name="postes" v-model="poste">
+                <option v-for="post in associatedDepartementPostes">
+                    {{ post.id }} {{ post.name }}
+                </option>
+            </select>
         </div>
         <div class="firstDay">
             <label for="firstDay">Enter your first day of work in this company : </label>
@@ -79,6 +84,7 @@
 </template>
 
 <script>
+import navBar from '@/components/navBar.vue'
 import axios from 'axios'
 export default{
     data(){
@@ -93,14 +99,18 @@ export default{
             birthDate:"",
             birthPlace:"",
             department:"",
-            position:"",
+            poste:"",
             firstDay:"",
             seniority:"",
             insurance:true,
             socialSecurity:"",
             allDepartements: [],
+            associatedDepartementPostes: [],
             alertMessage: "",
         }
+    },
+    components:{
+        navBar,
     },
     methods: {
         async addEmployee(){
@@ -132,6 +142,14 @@ export default{
             const res = await axios.get("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
             this.allDepartements = await res.data
         },
+        // find a way to wait the data change 
+        async getDepartementPostes(){
+            console.log(this.department[0])
+            const res = await axios.post("http://localhost/SQL_FINAL_BACK/getAllPosts.php",JSON.stringify({
+                "postID": this.department[0],
+            }))
+            this.associatedDepartementPostes = await res.data
+        }
         },
         async mounted(){
             await this.getAllDepartement()

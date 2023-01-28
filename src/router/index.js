@@ -6,6 +6,7 @@ import addEmployee from "@/views/addEmployee.vue"
 import getAllDepartement from "@/views/getAllDepartement"
 import searchEmployes from "@/views/searchEmployes"
 import createPosition from "@/views/createPosition"
+import departements from "@/views/departements"
 
 const routes = [
   {
@@ -30,11 +31,6 @@ const routes = [
     component: createDepartement,
   },
   {
-    path: "/createDepartement",
-    name: "createDepartement",
-    component: createDepartement,
-  },
-  {
     path:"/getAllDepartement",
     name:"getAllDepartement",
     component:getAllDepartement,
@@ -50,10 +46,10 @@ const routes = [
     component: searchEmployes,
   },
   {
-    path:"/createPosition",
-    name:"createPosition",
-    component:createPosition,
-  },
+    path: "/departements",
+    name:"departements",
+    component: departements,
+  }
 ]
 const router = createRouter({
   history: createWebHistory(),

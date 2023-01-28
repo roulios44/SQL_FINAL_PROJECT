@@ -1,4 +1,5 @@
 <template>
+  <navBar />
     <head></head>
     <div class="form">
       <h1>Create a new work position</h1>
@@ -32,6 +33,7 @@
   
   <script>
   import axios from 'axios'
+  import navBar from '@/components/navBar.vue'
   export default {
     data() {
       return {
@@ -42,6 +44,9 @@
         isDangerous: true,
         allDepartements: [],
       }
+    },
+    components:{
+      navBar
     },
     methods: {
       async createPosition(){
