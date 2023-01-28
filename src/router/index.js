@@ -23,6 +23,12 @@ const routes = [
     name: "Home",
     component: Home,
   },
+
+  {
+    path: "/createDepartement",
+    name: "createDepartement",
+    component: createDepartement,
+  },
   {
     path: "/createDepartement",
     name: "createDepartement",

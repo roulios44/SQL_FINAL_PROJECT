@@ -1,6 +1,7 @@
 <template>
     <head></head>
-    <h1>Create a new work position</h1>
+    <div class="form">
+      <h1>Create a new work position</h1>
     <p>
         <label for="position">Enter the job title : </label>
         <input type="text" name="position" id="position" v-model="position">
@@ -13,7 +14,7 @@
                 </option>
             </select>
             {{ departement[0] }}
-        </div>
+    </div>
     <p>
         <label for="degrees">Fill in its entitled degrees : </label>
         <input type="text" name="degrees" id="degrees" v-model="degrees">
@@ -25,6 +26,8 @@
     </p>
     <button id="btnSubmit" class="btn btn-primary" style="align:center" v-on:click="createPosition()">Create position</button>
     <p>{{ alertMessage }}</p>
+    </div>
+    
   </template>
   
   <script>
@@ -67,4 +70,7 @@
   }
   </script>
   <style>
+  head {
+    text-align: center;
+  }
   </style>
