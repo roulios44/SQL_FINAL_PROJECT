@@ -1,5 +1,4 @@
 <template>
-    
 <div class="card">
     <div class="card-details">
         <p class="text-title">Name : Mike</p>
@@ -85,14 +84,6 @@ export default {
 .card:hover .card-button {
  transform: translate(-50%, 50%);
  opacity: 1;
-}
-.popup{
-    display: none;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content: stretch;
 }
 .modal-background {
   display: none;
