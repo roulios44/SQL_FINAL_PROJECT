@@ -104,7 +104,7 @@ export default {
   z-index: 999;
 }
 .modal-content {
-    display: none;
+display: none;
   top: 5    0%;
   left: 50%;
   transform: translate(-50%, -50%);

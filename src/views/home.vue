@@ -82,7 +82,6 @@ span{
 p{
   text-decoration: none;
 }
-<<<<<<< HEAD
 .flip-card {
   background-color: transparent;
   width: 190px;
@@ -97,6 +96,4 @@ p{
   text-align: center;
   margin: 0;
 }
-=======
->>>>>>> 1decef468847fdebfac9a09195bac84bc22b3aa6
 </style>

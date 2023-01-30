@@ -136,16 +136,6 @@ export default{
                     "socialSecurity": this.socialSecurity
                 }))
             }
-<<<<<<< HEAD
-            },
-            async getAllDepartement(){
-            const res = await fetch("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
-            console.log("hi")
-            this.allDepartements = await res.json()
-            },
-
-=======
->>>>>>> 1decef468847fdebfac9a09195bac84bc22b3aa6
         },
         async getAllDepartement(){
             const res = await axios.get("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
@@ -163,14 +153,10 @@ export default{
         department : function(val){
             this.getDepartementPostes(val[0])
         }
-<<<<<<< HEAD
-        
-=======
     },
     async mounted(){
         await this.getAllDepartement()
     }
->>>>>>> 1decef468847fdebfac9a09195bac84bc22b3aa6
     }
 </script>
 <style>
