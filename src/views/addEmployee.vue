@@ -1,6 +1,5 @@
 <template>
     <navBar />
-    <common />
     <div class="addEmployees">
         <div class="name">
             <label for="name">Enter your name : </label>
@@ -85,7 +84,6 @@
 
 <script type="text/javascript">
 import navBar from '@/components/navBar.vue'
-import common from '@/components/common.vue'
 import axios from 'axios'
 export default{
     data(){
@@ -112,7 +110,6 @@ export default{
     },
     components:{
         navBar,
-        common
     },
     methods: {
         async addEmployee(){
