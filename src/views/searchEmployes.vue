@@ -49,17 +49,7 @@ export default {
   },
 }
 </script>
-<style>
-.container{
-  width: 100%;
-  height: 100%;
-  display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch;
-}
+<!-- <style>
 .card {
  width: 25%;
  height: 30%;
@@ -98,17 +88,13 @@ export default {
  transition: 0.3s ease-out;
 }
 
-.text-body {
- color: rgb(134, 134, 134);
-}
 
-/*Text*/
 .text-title {
  font-size: 1.5em;
  font-weight: bold;
 }
 
-/*Hover*/
+
 .card:hover {
  border-color: #008bf8;
  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
@@ -119,6 +105,4 @@ export default {
  opacity: 1;
 }
 
-
-
-</style>
+</style> -->

@@ -33,6 +33,7 @@
         redirectURL.searchParams.set('id',departementID)
         window.location = redirectURL
       },
+      
     },
     async mounted(){
       await this.getAllDepartement()
