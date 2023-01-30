@@ -1,10 +1,11 @@
 <template>
   <nav>
-    <button @click="toggleMenu" class="burger-button">☰</button>
     <div class="nav-links" :class="{ 'nav-open': menuOpen }">
-      <router-link to="/" class="nav-link">Home</router-link>
-      <router-link to="/about" class="nav-link">About</router-link>
-      <router-link to="/contact" class="nav-link">Contact</router-link>
+      <span><router-link to="/" class="nav-link"><p>Home</p></router-link></span>
+      <span><router-link to="/addEmployee" class="nav-link"><p>Add a New Employee</p></router-link></span>
+      <span><router-link to="/createDepartement" class="nav-link"><p>Add a new departement</p></router-link></span>
+      <span><router-link to="/createPosition" class="nav-link"><p>Add a new job's</p></router-link></span>
+      <span><router-link to="/searchEmployes" class="nav-link"><p>Search a employee</p></router-link></span>
     </div>
   </nav>
 
@@ -60,19 +61,28 @@
     padding : 0;
     margin : 0;
 }
-.burger-button {
-display: block;
-padding: 5px;
-font-size: 1.5em;
-cursor: pointer;
+.nav-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
 }
-.nav-links {
-display: none;
+span{
+  align-items: center;
+  align-content: center;
+  border: black solid;
+  border-radius: 20px;
+  width: 10%;
+  height: 15%;
+  text-align: center;
+  text-decoration: none;
 }
-
-.nav-open {
-display: block;
+p{
+  text-decoration: none;
 }
+<<<<<<< HEAD
 .flip-card {
   background-color: transparent;
   width: 190px;
@@ -87,4 +97,6 @@ display: block;
   text-align: center;
   margin: 0;
 }
+=======
+>>>>>>> 1decef468847fdebfac9a09195bac84bc22b3aa6
 </style>

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import navBar from '@/components/navBar.vue';
 export default {
   data() {
     return {
@@ -15,6 +16,9 @@ export default {
       selectedName: '',
       selectedId: ''
     }
+  },
+  components :{
+    navBar,
   },
   methods: {
     updateId() {

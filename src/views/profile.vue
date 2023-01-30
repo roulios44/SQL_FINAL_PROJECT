@@ -7,7 +7,7 @@
         <p class="text-body"></p>
     </div>
     <button @click ="showModal = true"  class="card-button" >More Info</button>
-    <div class ="popup" v-if="showModal">
+    <div class ="popup">
         <div class="modal-background"> 
             <div class="modal-content">
             <h1>Modal Title</h1>
