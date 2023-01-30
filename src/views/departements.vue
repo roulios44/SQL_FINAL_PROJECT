@@ -38,10 +38,9 @@
             "id":departementID,
           }))
           const data = await res.data
-          this.infoSelectDepartement = data
           console.log(data)
+          this.infoSelectDepartement = data
           document.getElementById(id).style.display = "flex";
-          this.generateInfoHTML()
       },
       async generateInfoHTML(){
         let res = ""
@@ -61,14 +60,17 @@
   <style>
   .popupDepartement{
       display:none;
-      width: 100%;
-      height: 100%;
+      width: 99%;
+      height: 90%;
       position: absolute;
       background-color: yellow;
       align-self: center;
       justify-content: center;
       align-items: center;
       z-index: 1;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
     }
     .popupDepartement span{
       color: red;
@@ -82,5 +84,9 @@
     }
     .card{
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
     }
   </style>
