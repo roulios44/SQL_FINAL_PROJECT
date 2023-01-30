@@ -45,6 +45,7 @@
                     {{ item.id }} {{ item.name }}
                 </option>
             </select>
+            {{ department }}
         </div>
         <div class="postes" v-if="associatedDepartementPostes.length>0">
             <p>Select Your Jobs ( select departement first )</p>
@@ -53,6 +54,7 @@
                     {{ post.id }} {{ post.name }}
                 </option>
             </select>
+            {{ poste }}
         </div>
         <p v-else>They are no, please create a job for this departement first</p>
         <div class="firstDay">
@@ -111,7 +113,7 @@ export default{
     },
     methods: {
         async addEmployee(){
-            if(!this.name || !this.email ||!this.surname || !this.gender || !this.age || !this.address || !this.phoneNumber || !this.birthDate || !this.birthPlace || !this.department || !this.position || !this.firstDay || !this.seniority || !this.insurance || !this.socialSecurity){
+            if(!this.name || !this.email ||!this.surname || !this.gender || !this.age || !this.address || !this.phoneNumber || !this.birthDate || !this.birthPlace || !this.department || !this.poste || !this.firstDay || !this.seniority || !this.insurance || !this.socialSecurity){
             this.alertMessage = "Please enter informations into all texts fields"
             } else {
             this.alertMessage = ""
@@ -127,7 +129,7 @@ export default{
                     "birthDate": this.birthDate,
                     "birthPlace": this.birthPlace,
                     "department": this.department[0],
-                    "position": this.position,
+                    "position": this.poste,
                     "firstDay": this.firstDay,
                     "seniority": this.seniority,
                     "insurance": this.insurance,

@@ -1,6 +1,6 @@
 <template>
+  <head></head>
   <navBar />
-    <head></head>
     <h1>Create a new position</h1>
     <p>
         <label for="position">Enter your job title :</label>
