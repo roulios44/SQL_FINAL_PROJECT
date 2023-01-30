@@ -13,6 +13,7 @@
         </div>
     </div>
 </template>
+
   <script>
   import axios from 'axios'
   import navBar from '@/components/navBar.vue'
@@ -39,7 +40,6 @@
           }))
           const data = await res.data
           this.infoSelectDepartement = data
-          console.log(data)
           document.getElementById(id).style.display = "flex";
           this.generateInfoHTML()
       },
@@ -58,6 +58,7 @@
     }
   }
   </script>
+
   <style>
   .popupDepartement{
       display:none;
