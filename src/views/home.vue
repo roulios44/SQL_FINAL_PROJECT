@@ -1,39 +1,38 @@
 <template>
   <navBar />
+
+  <div class="grid">
+    <article>
+      <header><strong>ACHARD Lisa</strong></header>
+      Second year student 👩‍💻
+      lisa.achard@ynov.com ✉️
+    </article>
+    
+    <article>
+      <header><strong>CROIZIER Jules</strong></header>
+      Second year student 👨‍💻
+      jules.croizier@ynov.com ✉️
+    </article>
+
+    <article>
+      <header><strong>RIVALANT Nicolas</strong></header>
+      Second year student 👨‍💻
+      nicolas.rivalant@ynov.com ✉️  
+    </article>
+  </div>
 </template>
+
 <script>
 import navBar from '@/components/navBar.vue'
   export default {
     components:{
-      navBar
+      navBar,
     },
   };
 </script>
 
 <style>
-.body {
-    padding : 0;
-    margin : 0;
-}
-.nav-links{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 10px 0;
-}
-span{
-  align-items: center;
-  align-content: center;
-  border: black solid;
-  border-radius: 20px;
-  width: 10%;
-  height: 15%;
-  text-align: center;
-  text-decoration: none;
-}
-p{
-  text-decoration: none;
+article {
+  text-align: center
 }
 </style>

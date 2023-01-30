@@ -1,7 +1,7 @@
 <template>
   <navBar />
     <p>
-      <label for="name">Search Employes</label>
+      <label for="name">Search Employees</label>
       <input type="text" name="search" id="search" v-model="search" v-on:input="searchEmployee()">
   </p>
   <div class="container">
