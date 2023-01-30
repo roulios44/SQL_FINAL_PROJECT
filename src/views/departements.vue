@@ -1,11 +1,11 @@
 <template>
   <navBar />
   <h1>List of all departements</h1>
-    <div v-for="departement,id in allDepartements" v-on:click="changeDisplay(id,departement.id)">
+    <div v-for="departement,id in allDepartements" v-on:click="()=>(changeDisplay(id,departement.id))">
         <div class="popupDepartement" :id="id">
           <span v-on:click="closePopup(id)">X</span>
-          <div v-for="depinfo in infoSelectDepartement">
-            <h1>{{ depinfo.id }}</h1>
+          <div class="content" v-for="depinfo in infoSelectDepartement">
+            <h1>{{ depinfo }}</h1>
           </div>
         </div>
         <div class="card">
@@ -38,15 +38,9 @@
             "id":departementID,
           }))
           const data = await res.data
-          console.log(data)
           this.infoSelectDepartement = data
+          console.log(data)
           document.getElementById(id).style.display = "flex";
-      },
-      async generateInfoHTML(){
-        let res = ""
-        for(let i=0;i<this.infoSelectDepartement.length;i++){
-          console.log(this.infoSelectDepartement[i])
-        }
       },
       async closePopup(id){
         document.getElementById(id).style.visibility = "hidden";
@@ -88,5 +82,8 @@
       align-items: center;
       justify-content: center;
       flex-direction: row;
+    }
+    .content{
+      z-index: 2;
     }
   </style>
