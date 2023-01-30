@@ -6,6 +6,7 @@ import getAllDepartement from "@/views/getAllDepartement"
 import searchEmployes from "@/views/searchEmployes"
 import createPosition from "@/views/createPosition"
 import departements from "@/views/departements"
+import profilEmployee from "@/views/profilEmployee"
 
 const routes = [
   {
@@ -43,6 +44,11 @@ const routes = [
     path: "/departements",
     name:"departements",
     component: departements,
+  },
+  {
+    path: "/profilEmployee",
+    name: "profilEmployee",
+    component: profilEmployee,
   }
 ]
 const router = createRouter({
