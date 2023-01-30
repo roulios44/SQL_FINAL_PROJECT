@@ -1,31 +1,21 @@
 <template>
-<div class="card">
-    <div class="card-details">
-        <p class="text-title">Name : Mike</p>
-        <p class="text-body">Surname : Smith</p>
-        <p class="text-body"></p>
-    </div>
-    <button @click ="showModal = true"  class="card-button" >More Info</button>
-    <div class ="popup">
-        <div class="modal-background"> 
-            <div class="modal-content">
-            <h1>Modal Title</h1>
-            <p>Modal Content</p>
-            <button @click="showModal = false" class ="closePopup">Close</button>
+    <div class="card">
+        <div class="card-details">
+            <p class="text-title">Name : Mike</p>
+            <p class="text-body">Surname : Smith</p>
+            <p class="text-body"></p>
         </div>
+        <button @click = "myLink" class="card-button">More Info</button>
     </div>
-</div>
-</div>
 </template>
 <script>
-export default {
-    data() {
-        return {
-            showModal: false,
+    export default {
+        methods:{
+            myLink() {
+                window.location.href = "https://www.google.com"
+            }
         }
-
-    }
-}
+    }    
 </script>
 
 <style>
@@ -84,34 +74,5 @@ export default {
 .card:hover .card-button {
  transform: translate(-50%, 50%);
  opacity: 1;
-}
-.modal-background {
-  display: none;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.705);
-  z-index: 999;
-}
-.modal-content {
-display: none;
-  top: 5    0%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  z-index: 1000;
-}   
-.closePopup{
-    margin-top: 5%;
-    margin-bottom: 5%;
-    display: none;
-    width: 10%;
-    height: 5%;
-    text-align: center;
-    justify-content: center;
-    cursor: pointer;
-    border: solid black;
 }
 </style>
