@@ -119,7 +119,4 @@
       z-index: 2;
       margin: 50px;
     }
-    .infoDepartement{
-
-    }
   </style>
