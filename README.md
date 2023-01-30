@@ -13,33 +13,19 @@ The goal of our website is quite simple : users create one habit per day in a gr
 The website allows the user to do few things on their own.
 
 - Home : 
-    - Register
-    - Login
-    - Modify profile
-    - Log out
-
-- Employees :
-    - Create a party
-    - Invite members to a party
-    - Join a party
-    - Look out for groups ranking
-
-- Departments : 
-    - Create one activity per day
-    - Specify its name, periodicity, difficulty, color
-    - Check activity's fulfillment
-    - Add point to the group
-    - Remove point to the group
-
-- Position : 
     - Actknowledge writers and their code's property
 
+- Employees :
+    - Create and add a new employee to the DB also linked to departments
+
+- Departments : 
+    - Create and add a new department to the DB also linked to both departments and positions
+
+- Position : 
+    - Create and add a new position to the DB also linked to departments
+
 - Search : 
-    - 
-
-- Error 404 : 
-    - Redirect the user if they are lost in their exploration
-
+    - Search employees thanks to a search bar
 
 
 # Property : 

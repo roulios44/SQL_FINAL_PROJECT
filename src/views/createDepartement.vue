@@ -1,27 +1,24 @@
 <template>
   <navBar />
   <head></head>
-  <h1>Create a departement</h1>
-  <p>
-      <label for="name">Enter the department's name : </label>
-      <input type="text" name="name" id="name" v-model="name">
-  </p>
-  <p>
-      <label for="location">Enter its location : </label>
-      <input type="text" name="location" id="location" v-model="location">
-  </p>
-  <p>
-      <label for="adress">Enter its address : </label>
-      <input type="text" name="adress" id="adress" v-model="adress">
-  </p>
-  <button id="btnSubmit" class="btn btn-primary" style="align:center" v-on:click="createDepartement()">Create departement</button>
+  <h1>Create a new departement</h1>
+  
+  <label for="name">Enter the department's name : </label>
+  <input type="text" name="name" id="name" v-model="name">
+  
+  <label for="location">Enter its location : </label>
+  <input type="text" name="location" id="location" v-model="location">
+  
+  <label for="adress">Enter its address : </label>
+  <input type="text" name="adress" id="adress" v-model="adress">
+  
+  <button id="btnSubmit" v-on:click="createDepartement()">Create departement</button>
   <p>{{ alertMessage }}</p>
 </template>
 
 <script>
 import axios from 'axios'
 import navBar from '@/components/navBar.vue'
-import common from '@/components/common.vue'
 export default {
   data() {
     return {
@@ -32,8 +29,7 @@ export default {
     }
   },
   components: {
-    navBar,
-    common
+    navBar
   },
   methods: {
     async createDepartement(){
