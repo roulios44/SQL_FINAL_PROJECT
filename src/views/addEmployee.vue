@@ -85,6 +85,7 @@
 
 <script type="text/javascript">
 import navBar from '@/components/navBar.vue'
+import common from '@/components/common.vue'
 import axios from 'axios'
 export default{
     data(){
@@ -111,6 +112,7 @@ export default{
     },
     components:{
         navBar,
+        common
     },
     methods: {
         async addEmployee(){
