@@ -2,15 +2,48 @@
   <navBar />
   <h1>List of all departements</h1>
     <div v-for="departement,id in allDepartements" v-on:click="()=>(changeDisplay(id,departement.id))">
+
+
         <div class="popupDepartement" :id="id">
+
+
           <span v-on:click="closePopup(id)">X</span>
-          <div class="content" v-for="depinfo in infoSelectDepartement">
-            <h1>{{ depinfo }}</h1>
+          
+
+
+
+
+          
+          <div class="content"  v-for="depinfo,id in infoSelectDepartement">
+
+
+
+            <h1 v-if="id==0">Departement Info</h1>
+            <div class="infoDepartement" v-if="id==0">
+               <p>Name:    {{ depinfo.departementName }}</p>
+               <p>Number of people:    {{ depinfo.nbPeople }}</p>
+               <p>Location:   {{ depinfo.location }}</p>
+               <p>adress:   {{ depinfo.adress }}</p>
+
+    
+            </div>
+
+
+            <h1 v-if="id==0">Employee</h1>
+            <div class="employee">
+              <p>{{ depinfo.employeeName }}</p>
+            </div>
           </div>
+
+
         </div>
+
+
         <div class="card">
           {{ departement.name }}
         </div>
+
+
     </div>
 </template>
   <script>
@@ -21,7 +54,6 @@
       return {
         allDepartements: [],
         infoSelectDepartement: [],
-        htmlSelectDepartement: "",
       }
     },
     components:{
@@ -64,7 +96,7 @@
       z-index: 1;
       align-items: center;
       justify-content: center;
-      flex-direction: row;
+      flex-direction: column;
     }
     .popupDepartement span{
       color: red;
@@ -85,5 +117,9 @@
     }
     .content{
       z-index: 2;
+      margin: 50px;
+    }
+    .infoDepartement{
+
     }
   </style>
