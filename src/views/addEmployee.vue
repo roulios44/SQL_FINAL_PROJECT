@@ -1,5 +1,4 @@
 <template>
-
     <form action="" method="get" class="formAddEmployees">
         <div class="addEmployees">
             <div class="name">
@@ -69,7 +68,6 @@
             </div>
         </div>  
     </form>
-
 </template>
 
 <script>
@@ -128,10 +126,12 @@ export default{
             console.log("hi")
             this.allDepartements = await res.json()
             },
+
         },
         async mounted(){
             await this.getAllDepartement()
         }
+        
     }
 </script>
 

@@ -1,20 +1,20 @@
 import { createWebHistory, createRouter } from "vue-router"
-import Header from "@/views/header.vue"
 import Home from "@/views/home.vue"
 import createDepartement from "@/views/createDepartement.vue"
 import addEmployee from "@/views/addEmployee.vue"
 import getAllDepartement from "@/views/getAllDepartement"
+import profile from "@/views/profile.vue"
 
 const routes = [
-  {
-    path : "/header",
-    name : "Header",
-    component : Header,
-  },
   {
     path : "/addEmployee",
     name : "addEmployee",
     component : addEmployee,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component : profile,
   },
   {
     path: "/",
@@ -28,7 +28,6 @@ const routes = [
     component: createDepartement,
   },
   {
-<<<<<<< HEAD
     path: "/createDepartement",
     name: "createDepartement",
     component: createDepartement,
@@ -37,13 +36,6 @@ const routes = [
     name:"getAllDepartement",
     component:getAllDepartement,
   }
-=======
-    path : "/header",
-    name : "Header",
-    component : Headers,
-  },
-
->>>>>>> 3668a04cc916eae0cae3593021f6888c0a4b34d6
 ]
 const router = createRouter({
   history: createWebHistory(),
