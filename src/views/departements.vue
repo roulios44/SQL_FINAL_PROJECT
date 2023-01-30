@@ -1,7 +1,7 @@
 <template>
   <navBar />
   <h1>List of all departements</h1>
-    <div v-for="departement,id in allDepartements" v-on:click="changeDisplay(id,departement.id)">
+    <div v-for="departement,id in allDepartements" on-click="changeDisplay(id,departement.id)">
         <div class="popupDepartement" :id="id">
           <span v-on:click="closePopup(id)">X</span>
           <div v-for="depinfo in infoSelectDepartement">
@@ -52,6 +52,7 @@
       },
       async closePopup(id){
         document.getElementById(id).style.display = "none";
+        console.log("close popup")
       }
     },
     async mounted(){

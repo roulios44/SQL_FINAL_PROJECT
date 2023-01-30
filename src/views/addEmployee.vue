@@ -30,11 +30,9 @@
             <label for="email">Enter your email : </label>
             <input type="email" name="email" id="email" required v-model="email">
         </div>
-        {{ email }}
         <div class="birthDate">
             <label for="birthDate">Enter your birth date : </label>
             <input type="date" name="birthDate" id="birthDate" required v-model="birthDate">
-            {{ birthDate }}
         </div>
         <div class="birthPlace">
             <label for="birthPlace">Enter your birth place : </label>
@@ -44,19 +42,22 @@
         <div class="department">
             <p>Select Your departement</p>
             <select name="departement" v-model="department" v-on:input="getDepartementPostes()">
-                <option v-for="item,id in allDepartements" >
+                <option v-for="item,id in allDepartements">
                     {{ item.id }} {{ item.name }}
                 </option>
             </select>
+            {{ department }}
         </div>
-        <div class="post">
+        <div class="postes" v-if="associatedDepartementPostes.length>0">
             <p>Select Your Jobs ( select departement first )</p>
             <select name="postes" v-model="poste">
                 <option v-for="post in associatedDepartementPostes">
                     {{ post.id }} {{ post.name }}
                 </option>
             </select>
+            {{ poste }}
         </div>
+        <p v-else>They are no, please create a job for this departement first</p>
         <div class="firstDay">
             <label for="firstDay">Enter your first day of work in this company : </label>
             <input type="date" name="firstDay" id="firstDay" required v-model="firstDay">
@@ -75,16 +76,14 @@
             <input type="text" name="socialSecurity" id="socialSecurity" required v-model="socialSecurity">
             {{ socialSecurity }}
         </div>
-
         <div class="addEmployee">
             <button id="btnSubmit" class="btn btn-primary" style="align:center" v-on:click="addEmployee()">Add Employee</button>
         </div>
         {{ alertMessage }}
     </div>  
-
 </template>
 
-<script>
+<script type="text/javascript">
 import navBar from '@/components/navBar.vue'
 import axios from 'axios'
 export default{
@@ -115,7 +114,7 @@ export default{
     },
     methods: {
         async addEmployee(){
-            if(!this.name ||!this.surname || !this.gender || !this.age || !this.address || !this.phoneNumber || !this.birthDate || !this.birthPlace || !this.department || !this.position || !this.firstDay || !this.seniority || !this.insurance || !this.socialSecurity){
+            if(!this.name || !this.email ||!this.surname || !this.gender || !this.age || !this.address || !this.phoneNumber || !this.birthDate || !this.birthPlace || !this.department || !this.poste || !this.firstDay || !this.seniority || !this.insurance || !this.socialSecurity){
             this.alertMessage = "Please enter informations into all texts fields"
             } else {
             this.alertMessage = ""
@@ -131,7 +130,7 @@ export default{
                     "birthDate": this.birthDate,
                     "birthPlace": this.birthPlace,
                     "department": this.department[0],
-                    "position": this.position,
+                    "position": this.poste,
                     "firstDay": this.firstDay,
                     "seniority": this.seniority,
                     "insurance": this.insurance,
@@ -143,20 +142,23 @@ export default{
             const res = await axios.get("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
             this.allDepartements = await res.data
         },
-        // find a way to await the data changes 
-        async getDepartementPostes(){
-            console.log(this.department[0])
+        // find a way to wait the data change 
+        async getDepartementPostes(departementID){
             const res = await axios.post("http://localhost/SQL_FINAL_BACK/getAllPosts.php",JSON.stringify({
-                "postID": this.department[0],
+                "postID": departementID,
             }))
             this.associatedDepartementPostes = await res.data
-        }
         },
-        async mounted(){
-            await this.getAllDepartement()
+    },
+    watch:{
+        department : function(val){
+            this.getDepartementPostes(val[0])
         }
+    },
+    async mounted(){
+        await this.getAllDepartement()
+    }
     }
 </script>
-
 <style>
 </style>

@@ -1,8 +1,7 @@
 <template>
+  <head></head>
   <navBar />
-    <head></head>
-    <div class="form">
-      <h1>Create a new work position</h1>
+    <h1>Create a new position</h1>
     <p>
         <label for="position">Enter the job title : </label>
         <input type="text" name="position" id="position" v-model="position">
@@ -27,8 +26,6 @@
     </p>
     <button id="btnSubmit" class="btn btn-primary" style="align:center" v-on:click="createPosition()">Create position</button>
     <p>{{ alertMessage }}</p>
-    </div>
-    
   </template>
   
   <script>

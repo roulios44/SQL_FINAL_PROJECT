@@ -11,17 +11,11 @@
 </template>
   <script>
     export default {
-        name : "NavBar",
-        data() {
-            return {
-                menuOpen : false,
-            };
-        },
-        methods: {
-            toggleMenu(){
-                this.menuOpen = !this.menuOpen;
-            }
-        }
+      data() {
+        return {
+            menuOpen : false,
+        };
+      },
     };
   </script>
   <style>
