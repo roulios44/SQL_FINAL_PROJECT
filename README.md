@@ -51,6 +51,11 @@ The project belongs to its authors. ✍️
 - Picocss 🖌️
 
 
+# Credits : 
+
+The group is thankfull for `LABILLE Auriane`'s advices and demonstrations with the tool `Picocss` which saved quantity of time for the front end.
+
+
 # Instructions : 
 
 - Git clone the repository
