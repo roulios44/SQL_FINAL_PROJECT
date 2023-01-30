@@ -1,5 +1,6 @@
 <template>
     <navBar />
+    <common />
     <div class="addEmployees">
         <div class="name">
             <label for="name">Enter your name : </label>
@@ -66,8 +67,8 @@
         </div>
         <div class="insurance">
             <label for="insurance">Do you benefit of the the company insurance ? </label>
-            <p><input type="radio" v-model="insurance" v-bind:value="true">Yes</p>
-            <p><input type="radio" v-model="insurance" v-bind:value="false">No</p>
+            <p><input class="binary" type="radio" v-model="insurance" v-bind:value="true">Yes</p>
+            <p><input class="binary" type="radio" v-model="insurance" v-bind:value="false">No</p>
         </div>
         <div class="socialSecurity">
             <label for="socialSecurity">Fill in your social security number : </label>

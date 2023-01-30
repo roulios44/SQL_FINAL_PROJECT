@@ -21,6 +21,7 @@
 <script>
 import axios from 'axios'
 import navBar from '@/components/navBar.vue'
+import common from '@/components/common.vue'
 export default {
   data() {
     return {
@@ -31,7 +32,8 @@ export default {
     }
   },
   components: {
-    navBar
+    navBar,
+    common
   },
   methods: {
     async createDepartement(){

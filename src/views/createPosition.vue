@@ -22,8 +22,8 @@
     </p>
     <p>   
       <label for="isDangerous">Is this position dangerous ? </label>
-      <p><input type="radio" v-model="isDangerous" v-bind:value="true">Yes</p>
-      <p><input type="radio" v-model="isDangerous" v-bind:value="false">No</p>
+      <p><input class="binary" type="radio" v-model="isDangerous" v-bind:value="true">Yes</p>
+      <p><input class="binary" type="radio" v-model="isDangerous" v-bind:value="false">No</p>
     </p>
     <button id="btnSubmit" class="btn btn-primary" style="align:center" v-on:click="createPosition()">Create position</button>
     <p>{{ alertMessage }}</p>
@@ -34,6 +34,7 @@
   <script>
   import axios from 'axios'
   import navBar from '@/components/navBar.vue'
+  import common from '@/components/common.vue'
   export default {
     data() {
       return {
@@ -46,7 +47,8 @@
       }
     },
     components:{
-      navBar
+      navBar,
+      common
     },
     methods: {
       async createPosition(){
