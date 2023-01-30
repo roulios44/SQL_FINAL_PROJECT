@@ -1,50 +1,14 @@
 <template>
   <navBar />
   <h1>List of all departements</h1>
-    <div v-for="departement,id in allDepartements" v-on:click="()=>(changeDisplay(id,departement.id))">
-
-
-        <div class="popupDepartement" :id="id">
-
-
-          <span v-on:click="closePopup(id)">X</span>
-          
-
-
-
-
-          
-          <div class="content"  v-for="depinfo,id in infoSelectDepartement">
-
-
-
-            <h1 v-if="id==0">Departement Info</h1>
-            <div class="infoDepartement" v-if="id==0">
-               <p>Name:    {{ depinfo.departementName }}</p>
-               <p>Number of people:    {{ depinfo.nbPeople }}</p>
-               <p>Location:   {{ depinfo.location }}</p>
-               <p>adress:   {{ depinfo.adress }}</p>
-
-    
-            </div>
-
-
-            <h1 v-if="id==0">Employee</h1>
-            <div class="employee">
-              <p>{{ depinfo.employeeName }}</p>
-            </div>
-          </div>
-
-
+  <div class="container">
+    <div class="card" v-for="departement in allDepartements" v-on:click="redirectToProfile(employee.id)">
+        <div class="card-details">
+            <p class="text-title">{{ departement.name }}</p>
         </div>
-
-
-        <div class="card">
-          {{ departement.name }}
-        </div>
-
-
+        <button class="card-button" v-on:click="redirectDepartementPage(departement.id)">More Info</button>
     </div>
+  </div>
 </template>
   <script>
   import axios from 'axios'
@@ -64,19 +28,11 @@
           const res = await axios.get("http://localhost/SQL_FINAL_BACK/getAllDepartement.php")
           this.allDepartements = await res.data
       },
-      async changeDisplay(id,departementID){
-        const res = await axios.post("http://localhost/SQL_FINAL_BACK/getAllInfoDepartements.php",
-          JSON.stringify({
-            "id":departementID,
-          }))
-          const data = await res.data
-          this.infoSelectDepartement = data
-          console.log(data)
-          document.getElementById(id).style.display = "flex";
+      async redirectDepartementPage(departementID){
+        const redirectURL  = new URL("http://localhost:8080/profileDepartement")
+        redirectURL.searchParams.set('id',departementID)
+        window.location = redirectURL
       },
-      async closePopup(id){
-        document.getElementById(id).style.visibility = "hidden";
-      }
     },
     async mounted(){
       await this.getAllDepartement()
@@ -118,8 +74,5 @@
     .content{
       z-index: 2;
       margin: 50px;
-    }
-    .infoDepartement{
-
     }
   </style>

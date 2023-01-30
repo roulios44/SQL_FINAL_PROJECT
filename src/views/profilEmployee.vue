@@ -1,6 +1,5 @@
 <template>
     <navBar />
-    {{ this.idEmployee }}
     {{ this.infoEmployee }}
 </template>
 <script>
