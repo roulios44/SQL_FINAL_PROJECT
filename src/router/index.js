@@ -2,12 +2,10 @@ import { createWebHistory, createRouter } from "vue-router"
 import Home from "@/views/home.vue"
 import createDepartement from "@/views/createDepartement.vue"
 import addEmployee from "@/views/addEmployee.vue"
-import getAllDepartement from "@/views/getAllDepartement"
 import searchEmployes from "@/views/searchEmployes"
 import createPosition from "@/views/createPosition"
 import departements from "@/views/departements"
 import profilEmployee from "@/views/profilEmployee"
-import profileDepartement from "@/views/infoDepartement"
 
 const routes = [
   {
@@ -25,11 +23,6 @@ const routes = [
     path: "/createDepartement",
     name: "createDepartement",
     component: createDepartement,
-  },
-  {
-    path:"/getAllDepartement",
-    name:"getAllDepartement",
-    component:getAllDepartement,
   },
   {
     path: "/createPosition",
@@ -50,12 +43,7 @@ const routes = [
     path: "/profilEmployee",
     name: "profilEmployee",
     component: profilEmployee,
-  },
-  {
-    path: "/profileDepartement",
-    name: "profileDepartement",
-    component: profileDepartement,
-  },
+  }
 ]
 const router = createRouter({
   history: createWebHistory(),

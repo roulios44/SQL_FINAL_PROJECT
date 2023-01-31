@@ -1,10 +1,12 @@
 <template>
     <navBar />
     {{ this.infoEmployee }}
+    <button v-on:click="deleteEmployee()">Delete employee</button>
 </template>
 <script>
 import axios from 'axios'
 import navBar from '@/components/navBar.vue'
+import router from '@/router';
 export default {
   data() {
     return {
@@ -27,6 +29,12 @@ export default {
         }))
         const data = await post.data
         this.infoEmployee = data
+    },
+    async deleteEmployee(){
+        const post = await axios.post("http://localhost/SQL_FINAL_BACK/deleteEmployee.php",JSON.stringify({
+            "id":this.idEmployee,
+        }))
+        window.location = "http://localhost:8080/"
     },
   },
   async mounted(){
