@@ -49,14 +49,11 @@ The project belongs to its authors. ✍️
 - MySQL 🗄️
 - Vue ⚙️
 - Picocss 🖌️
-<<<<<<< HEAD
-=======
 
 
 # Credits : 
 
 The group is thankfull for `LABILLE Auriane`'s advices and demonstrations with the tool `Picocss` which saved quantity of time for the front end.
->>>>>>> 464d390bdee5d77c090d26d412af92c2d1da7121
 
 
 # Instructions : 
