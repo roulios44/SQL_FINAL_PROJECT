@@ -45,11 +45,11 @@ export default {
         }))
         const data = await post.data
         this.infoEmployee = data
-        console.log(this.infoEmployee)
     },
     async deleteEmployee(){
         const post = await axios.post("http://localhost/SQL_FINAL_BACK/deleteEmployee.php",JSON.stringify({
             "id":this.idEmployee,
+            "departementID":this.infoEmployee.departementID,
         }))
         window.location = "http://localhost:8080/"
     },
