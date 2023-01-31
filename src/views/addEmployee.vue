@@ -30,7 +30,7 @@
     <input type="text" name="birthPlace" id="birthPlace" required v-model="birthPlace">
 
     <label for="departement">Select Your departement</label>
-    <select name="departement" v-model="department" v-on:input="getDepartementPostes()">
+    <select name="departement" v-model="department">
         <option v-for="item,id in allDepartements">
             {{ item.id }} {{ item.name }}
         </option>
@@ -65,11 +65,9 @@
     <div class="socialSecurity">
         <label for="socialSecurity">Fill in your social security number : </label>
         <input type="text" name="socialSecurity" id="socialSecurity" required v-model="socialSecurity">
-        {{ socialSecurity }}
     </div>
 
     <button id="btnSubmit" v-on:click="addEmployee()">Add Employee</button>
-    
     {{ alertMessage }}
 </template>
 

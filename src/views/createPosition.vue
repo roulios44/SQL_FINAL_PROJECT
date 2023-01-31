@@ -12,7 +12,6 @@
           {{ item.id }} {{ item.name }}
         </option>
     </select>
-    {{ departement[0] }}
 
     <label for="degrees">Fill in its entitled degrees : </label>
     <input type="text" name="degrees" id="degrees" v-model="degrees">
