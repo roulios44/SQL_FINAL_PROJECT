@@ -6,6 +6,7 @@ import searchEmployes from "@/views/searchEmployes"
 import createPosition from "@/views/createPosition"
 import departements from "@/views/departements"
 import profilEmployee from "@/views/profilEmployee"
+import infoDepartement from "@/views/infoDepartement"
 
 const routes = [
   {
@@ -43,7 +44,12 @@ const routes = [
     path: "/profilEmployee",
     name: "profilEmployee",
     component: profilEmployee,
-  }
+  },
+  {
+    path: "/profileDepartement",
+    name: "profileDepartement",
+    component: infoDepartement,
+  },
 ]
 const router = createRouter({
   history: createWebHistory(),
