@@ -51,28 +51,29 @@ export default {
 }
 </script>
 <style>
-.container{
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
+.container{ 
+  width: 100% !important;
+  height: 100% !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important;
 }
 .card{
-  background-color: aliceblue;
-  display: flex;
-  flex-direction: row;
-  width: 30%;
-  height: 50%;
+  margin: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 30%!important;
+  height: 50%!important;
+  border: solid bisque;
 }
 .card-details{
-  widows: 100%;
-  display: flex;
-  flex-direction: column;
+  widows: 100%!important;
+  display: flex!important;
+  flex-direction: column!important;
 }
 .card-button{
-  width: 100%;
-  display: flex;
+  width: 100%!important;
+  display: flex!important;
 }
 
 </style>
