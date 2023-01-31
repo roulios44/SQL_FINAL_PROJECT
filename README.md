@@ -5,7 +5,7 @@
 
 This project was created by three second year students of computer sciences. As part of our SQL lessons, our final exam is a project which consists in the making of a website linked to a database storing the informations of a random company. 🏗️
 
-The goal of our website is quite simple : users create one habit per day in a group with other members and have to check it to fulfill it. It then earns points to the party or removes it if the habit is not checked by the end of the chosen period. ✔️  
+The use of our website is quite simple : users create departments, positions and employees thanks to complete forms. It then adds these informations to the linked database which is displayed in few web tabs. ✔️  
 
 
 # Fonctionalities : 
@@ -15,14 +15,17 @@ The website allows the user to do few things on their own.
 - Home : 
     - Actknowledge writers and their code's property
 
-- Employees :
-    - Create and add a new employee to the DB also linked to departments
-
 - Departments : 
-    - Create and add a new department to the DB also linked to both departments and positions
+    - List all departments and allows to check on employees
 
-- Position : 
-    - Create and add a new position to the DB also linked to departments
+- Add departments : 
+    - Create a new department to the DB also linked to both departments and positions
+
+- Add position : 
+    - Create a new position to the DB also linked to departments
+
+- Add employees :
+    - Create a new employee to the DB also linked to departments
 
 - Search : 
     - Search employees thanks to a search bar
@@ -37,7 +40,7 @@ The project belongs to its authors. ✍️
 
 - `ACHARD Lisa` => lisa.achard@ynov.com 👩‍🎓
 - `CROIZIER Jules` => jules.croizier@ynov.com 👨‍🎓
-- `RIVALAND Nicolas` => nicolas.rivaland@ynov.com 👨‍🎓
+- `RIVALANT Nicolas` => nicolas.rivalant@ynov.com 👨‍🎓
 
 
 # Used tools and technologies :
@@ -45,6 +48,12 @@ The project belongs to its authors. ✍️
 - PHP (OOP) 👨‍💻
 - MySQL 🗄️
 - Vue ⚙️
+- Picocss 🖌️
+
+
+# Credits : 
+
+The group is thankfull for `LABILLE Auriane`'s advices and demonstrations with the tool `Picocss` which saved quantity of time for the front end.
 
 
 # Instructions : 
