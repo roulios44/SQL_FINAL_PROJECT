@@ -5,13 +5,14 @@
       <input type="text" name="search" id="search" v-model="search" v-on:input="searchEmployee()">
   </p>
   <div class="container">
-    <div class="card" v-for="employee in result" v-on:click="redirectToProfile(employee.id)">
+    <div class="card" v-for="employee in result">
           <div class="card-details">
               <p class="text-title">{{ employee.name }}</p>
               <p class="text-body">{{ employee.surname}}</p>
-              <p class="text-body"></p>
           </div>
-          <button class="card-button" >More Info</button>
+          <div>
+            <button class="card-button" v-on:click="redirectToProfile(employee.id)">More Info</button>
+          </div>
     </div>
   </div>
 </template>
@@ -49,60 +50,29 @@ export default {
   },
 }
 </script>
-<!-- <style>
-.card {
- width: 25%;
- height: 30%;
- border-radius: 20px;
- background: #f5f5f5;
- position: relative;
- padding: 1.8rem;
- border: 2px solid #c3c6ce;
- transition: 0.5s ease-out;
- overflow: visible;
- display:flex;
- margin: 5%;
+<style>
+.container{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.card{
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  width: 30%;
+  height: 50%;
+}
+.card-details{
+  widows: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card-button{
+  width: 100%;
+  display: flex;
 }
 
-.card-details {
- color: black;
- height: 100%;
- gap: .5em;
- display: grid;
- place-content: center;
-}
-
-.card-button {
- transform: translate(-50%, 125%);
- width: 60%;
- border-radius: 1rem;
- border: none;
- background-color: #008bf8;
- color: #fff;
- font-size: 1rem;
- padding: .5rem 1rem;
- position: absolute;
- left: 50%;
- bottom: 0;
- opacity: 0;
- transition: 0.3s ease-out;
-}
-
-
-.text-title {
- font-size: 1.5em;
- font-weight: bold;
-}
-
-
-.card:hover {
- border-color: #008bf8;
- box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
-}
-
-.card:hover .card-button {
- transform: translate(-50%, 50%);
- opacity: 1;
-}
-
-</style> -->
+</style>

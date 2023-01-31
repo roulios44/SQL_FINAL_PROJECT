@@ -45,7 +45,7 @@ export default {
             }))
         const res = await post.data
       }
-      }
+    }
   },
 }
 </script>
